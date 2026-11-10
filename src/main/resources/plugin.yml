@@ -7,8 +7,9 @@ load: POSTWORLD
 authors: [ NadTum ]
 description: Le moteur de quêtes du réseau (étapes, branches, conditions, signaux des autres plugins, réputation).
 depend: [EterLib]
-# EterNpc : marqueurs et bulles au-dessus des PNJ ; EterClan : pas de progrès sur le terrain d'un autre clan
-softdepend: [EterNpc, EterClan, EterSuccess]
+# EterNpc : marqueurs et bulles au-dessus des PNJ. EterClan et EterSuccess sont lus à l'usage (pas au chargement :
+# en softdepend, ils formaient une boucle EterResource -> EterJob -> EterQuest -> EterSuccess -> EterResource)
+softdepend: [EterNpc]
 
 commands:
   quests:
