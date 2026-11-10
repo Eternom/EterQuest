@@ -1,0 +1,46 @@
+# Quêtes propres à EterQuest (propriétaire « eterquest »), données par l'action eterquest:start <quête> (un PNJ, un
+# menu...). Les quêtes de métier sont dans EterJob. Tout fichier .yml de ce dossier est lu ; /eterquest reload.
+#
+# version : à AUGMENTER après chaque changement (la plus haute version l'emporte sur tout le réseau).
+# defaults : repris par chaque quête du fichier (tags, meta, requires : ajoutés ; le reste : si absent).
+#
+# Une quête :
+#   name, description, icon, category, tags
+#   requires   conditions pour la commencer : « reputation <pnj|global> <min> », « done <quête> », « !done <quête> »,
+#              « permission <perm> », ou une condition d'EterLib « ?eterhub:discovered lac »
+#   reputation réputation gagnée à la fin (EterLib)       rewards  commandes console ({player}) ou « action: ... »
+#   abandon    false : ne peut pas être abandonnée        tags     « repeatable » : peut être refaite
+#   objectives (forme courte, une étape) ou stages (des étapes) :
+#     - id, text (ce qu'il faut faire), objectives, turn-in, on-start, on-complete, say, branches, next, end, time-limit
+# Objectifs : "TYPE:CIBLE:QUANTITÉ" ou {type, target, amount, scale, key, match, where, text, optional}
+#   break harvest kill fish craft smelt breed explore enchant trade : actions du jeu (cible, ANY, #ores #logs #crops
+#   #fish #stone #flowers) ; deliver : objets à remettre ; talk : parler à un PNJ (npc: fermier) ; signal : ce qu'un
+#   plugin signale (key: eterhub:harvest, match: {crop: wheat, quality: [fine, golden]}).
+#   where : {biomes, dimension, min-y, max-y, time: day|night, weather: clear|rain|thunder, servers: [lobby]}
+# turn-in : auto (tout de suite), remote (depuis /quests), npc:<pnj> (en cliquant dessus), giver (le donneur du plugin)
+#
+# Signaux d'EterHub (lobbys) : eterhub:harvest {crop, quality, zone} · eterhub:fish {fish, rarity, grams}
+#   eterhub:find {find, rarity} · eterhub:head {hunt, zone, rare} · eterhub:parkour {course, ms} · eterhub:zone {zone}
+
+version: 1
+quests: {}
+
+# Exemple (à décommenter) :
+# quests:
+#   village-premiers-pas:
+#     name: "<gold>Premiers pas au village"
+#     category: village
+#     reputation: 2
+#     rewards: ["eco give {player} 100"]
+#     stages:
+#       - id: guide
+#         text: "Parle au guide, sur la place du Spawn"
+#         objectives: [{type: talk, npc: guide}]
+#         say: ["Bienvenue {player} ! Va donc faire un tour au Lac."]
+#       - id: lac
+#         text: "Pêche un poisson au Lac"
+#         objectives: [{type: signal, key: eterhub:fish, amount: 1, text: "Pêcher au Lac"}]
+#       - id: retour
+#         text: "Retourne voir le guide"
+#         objectives: [{type: talk, npc: guide}]
+#         say: ["Alors, ça mord ? Te voilà un vrai villageois !"]

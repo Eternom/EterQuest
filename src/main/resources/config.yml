@@ -1,0 +1,30 @@
+# ============================================================
+#  EterQuest
+# ============================================================
+#
+#  Le moteur de quêtes du réseau. Les quêtes sont écrites en YAML par les plugins qui les donnent (EterJob :
+#  plugins/EterJob/quests/<métier>.yml ; EterQuest : plugins/EterQuest/quests/, voir exemple.yml) et partagées par la
+#  base avec tous les serveurs : la plus haute « version » d'un fichier l'emporte, jamais l'inverse.
+#  /quests : le journal. /eterquest : le staff. /eterquest reload relit ce fichier et les quêtes sur tout le réseau.
+
+display:
+  # Barre de boss pendant une action (sinon : au-dessus de la barre d'objets).
+  boss-bar: true
+  # Une quête est suivie dans la sidebar dès qu'elle avance (si aucune ne l'est).
+  auto-track: true
+  # Rappel « quête prête à rendre », au plus toutes les N minutes (0 : jamais).
+  ready-reminder-minutes: 60
+
+anti-cheat:
+  # Les créatures des spawners de trial chamber comptent-elles ?
+  count-trial-spawners: false
+  # Pêcher « n'importe quoi » : seuls les poissons comptent (pas les déchets ni les trésors).
+  fish-only-fish: true
+  # Pas de progrès avant ce temps de jeu actif (minutes, EterSuccess ; 0 : aucun).
+  min-playtime-minutes: 30
+  # Plus de blocs cassés en une minute : le staff est prévenu (0 : jamais).
+  break-alert-per-minute: 300
+
+# Bouton en bas du journal : commande (sans le /) pour revenir (ex : "menu") ; vide : fermer.
+menus:
+  back-command: ""

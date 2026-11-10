@@ -1,0 +1,32 @@
+name: EterQuest
+version: '${version}'
+
+main: fr.eternom.eterQuest.Main
+api-version: '26.2'
+load: POSTWORLD
+authors: [ NadTum ]
+description: Le moteur de quêtes du réseau (étapes, branches, conditions, signaux des autres plugins, réputation).
+depend: [EterLib]
+# EterNpc : marqueurs et bulles au-dessus des PNJ ; EterClan : pas de progrès sur le terrain d'un autre clan
+softdepend: [EterNpc, EterClan, EterSuccess]
+
+commands:
+  quests:
+    description: Ton journal des quêtes, ta boîte de récupération.
+    usage: /quests [box|sidebar|messages]
+    aliases: [quest, journal]
+    permission: eterquest.use
+  eterquest:
+    description: Gestion des quêtes (staff).
+    usage: /eterquest <list|info|player|give|stage|complete|remove|reputation|debug|stats|reload>
+    permission: eterquest.admin
+
+permissions:
+  eterquest.use:
+    description: Le journal des quêtes (/quests).
+    default: true
+  eterquest.admin:
+    description: Gestion des quêtes (/eterquest) et alertes de cadence anormale.
+    default: op
+    children:
+      eterquest.use: true
