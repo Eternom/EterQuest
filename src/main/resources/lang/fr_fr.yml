@@ -142,8 +142,8 @@ journal:
   quest-name: "<quest> <dark_gray>· <gray><category>"
   empty: "<info>Aucune quête en cours"
   empty-lore: "<gray>La guilde des métiers et les villageois en donnent."
-  previous: "<info>Page précédente"
-  next: "<info>Page suivante"
+  previous: "<accent>« Page précédente"
+  next: "<accent>Page suivante »"
   box: "<accent>Boîte de récupération"
   box-lore: "<gray>Colis : <accent><count></accent> <dark_gray>· clic pour les prendre"
   summary: "<accent>Sidebar : toutes mes quêtes"
@@ -189,3 +189,6 @@ admin:
   stats-header: "<info>Quêtes finies (<accent><days></accent> jours) :"
   stats-line: "<dark_gray> · <info><day> <gray><detail>"
   rate-alert: "<error>[Quêtes] <accent><player></accent> a cassé <accent><count></accent> blocs en une minute."
+
+menu:
+  page-of: "<dark_gray>Page <page>/<pages>"

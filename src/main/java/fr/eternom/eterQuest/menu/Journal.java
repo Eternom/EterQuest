@@ -122,10 +122,10 @@ public class Journal {
             }
             inventory.setItem(INFO, info(quests));
             if (page > 0) {
-                inventory.setItem(PREVIOUS, Items.item(Material.ARROW, messages.get(viewer, "journal.previous"), List.of()));
+                inventory.setItem(PREVIOUS, Items.item(Material.ARROW, messages.get(viewer, "journal.previous"), List.of(messages.get(viewer, "menu.page-of", "page", String.valueOf(page + 1), "pages", String.valueOf(pages)))));
             }
             if (page < pages - 1) {
-                inventory.setItem(NEXT, Items.item(Material.ARROW, messages.get(viewer, "journal.next"), List.of()));
+                inventory.setItem(NEXT, Items.item(Material.ARROW, messages.get(viewer, "journal.next"), List.of(messages.get(viewer, "menu.page-of", "page", String.valueOf(page + 1), "pages", String.valueOf(pages)))));
             }
             inventory.setItem(BOX, Items.item(boxCount > 0 ? Material.CHEST_MINECART : Material.MINECART, messages.get(viewer, "journal.box"),
                     List.of(messages.get(viewer, "journal.box-lore", "count", String.valueOf(boxCount))), boxCount > 0));

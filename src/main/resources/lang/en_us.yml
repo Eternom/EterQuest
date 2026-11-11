@@ -140,8 +140,8 @@ journal:
   quest-name: "<quest> <dark_gray>· <gray><category>"
   empty: "<info>No current quest"
   empty-lore: "<gray>The job guild and the villagers give some."
-  previous: "<info>Previous page"
-  next: "<info>Next page"
+  previous: "<accent>« Previous page"
+  next: "<accent>Next page »"
   box: "<accent>Recovery box"
   box-lore: "<gray>Parcels: <accent><count></accent> <dark_gray>· click to take them"
   summary: "<accent>Sidebar: all my quests"
@@ -187,3 +187,6 @@ admin:
   stats-header: "<info>Completed quests (<accent><days></accent> days):"
   stats-line: "<dark_gray> · <info><day> <gray><detail>"
   rate-alert: "<error>[Quests] <accent><player></accent> broke <accent><count></accent> blocks in one minute."
+
+menu:
+  page-of: "<dark_gray>Page <page>/<pages>"
