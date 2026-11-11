@@ -91,6 +91,11 @@ public interface QuestApi {
     /** Tous les objectifs de l'étape en cours sont remplis (objets sur lui compris) : il ne reste qu'à rendre. */
     boolean ready(Player player, QuestInstance instance);
 
+    /** Quêtes du joueur, tous propriétaires, prêtes à rendre (ex : « À faire » du /menu). Thread principal. */
+    default int readyCount(Player player) {
+        return 0;
+    }
+
     /**
      * Rendre l'étape en cours : place = « giver » (le donneur du propriétaire), « remote » (à distance), « npc:<id> ».
      * Objets pris, puis l'étape suivante ou la fin ; refusée : objets rendus. after : le résultat (thread principal).

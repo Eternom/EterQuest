@@ -160,6 +160,11 @@ public class QuestApiService implements QuestApi, QuestBridge.Provider {
     }
 
     @Override
+    public int readyCount(Player player) {
+        return (int) service.quests(player.getUniqueId(), null).stream().filter(quest -> service.ready(player, quest)).count();
+    }
+
+    @Override
     public void turnIn(Player player, String owner, String slot, String place, Consumer<TurnInResult> after) {
         service.turnIn(player, owner.toLowerCase(java.util.Locale.ROOT), slot, place, after);
     }
