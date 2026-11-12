@@ -158,6 +158,10 @@ journal:
   track: "<dark_gray>Click: track it in the sidebar"
   untrack: "<dark_gray>Click: stop tracking it"
   abandon: "<dark_gray>Shift + right click: abandon it"
+  abandon-confirm:
+    title: "<primary>Abandon the quest"
+    body: "<info>Abandon <quest><info>? Its progress will be lost."
+    button: "<error>Abandon"
 
 admin:
   usage: "<info>/eterquest <accent>list [owner] · info <quest> · player <player> · give <player> <quest> · stage <player> <owner/slot> <step> · complete <player> <owner/slot> · remove <player> <owner/slot> · reputation <player> [set|add <points>] · debug <player> · stats [days] · reload"

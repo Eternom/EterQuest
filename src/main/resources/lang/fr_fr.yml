@@ -160,6 +160,10 @@ journal:
   track: "<dark_gray>Clic : la suivre dans la sidebar"
   untrack: "<dark_gray>Clic : ne plus la suivre"
   abandon: "<dark_gray>Maj + clic droit : l'abandonner"
+  abandon-confirm:
+    title: "<primary>Abandonner la quête"
+    body: "<info>Abandonner <quest><info> ? Sa progression sera perdue."
+    button: "<error>Abandonner"
 
 admin:
   usage: "<info>/eterquest <accent>list [propriétaire] · info <quête> · player <joueur> · give <joueur> <quête> · stage <joueur> <owner/slot> <étape> · complete <joueur> <owner/slot> · remove <joueur> <owner/slot> · reputation <joueur> [set|add <points>] · debug <joueur> · stats [jours] · reload"

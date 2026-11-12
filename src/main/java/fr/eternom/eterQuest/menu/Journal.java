@@ -237,7 +237,16 @@ public class Journal {
                     return;
                 }
                 Sounds.click(player);
-                service.abandon(player, instance, () -> open(player, page));
+                // Confirmation commune (Dialogs) : abandonner fait perdre la progression de la quête
+                player.closeInventory();
+                io.papermc.paper.registry.data.dialog.DialogBase base = io.papermc.paper.registry.data.dialog.DialogBase.builder(
+                                messages.get(player, "journal.abandon-confirm.title"))
+                        .body(List.of(io.papermc.paper.registry.data.dialog.body.DialogBody.plainMessage(messages.get(player,
+                                "journal.abandon-confirm.body", TagResolver.resolver(Placeholder.component("quest", api.name(player, instance)))))))
+                        .build();
+                fr.eternom.eterLib.helper.gui.Dialogs.show(service.plugin(), player, base, messages.get(player, "journal.abandon-confirm.button"),
+                        messages.get(player, "dialog.cancel"), response -> service.abandon(player, instance, () -> open(player, page)),
+                        () -> open(player, page));
                 return;
             }
             if (click.isRightClick()) {
