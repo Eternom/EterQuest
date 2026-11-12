@@ -15,7 +15,7 @@ commands:
   quests:
     description: Ton journal des quêtes, ta boîte de récupération.
     usage: /quests [box|sidebar|messages]
-    aliases: [quest, journal]
+    aliases: [quest, journal, q]
     permission: eterquest.use
   eterquest:
     description: Gestion des quêtes (staff).
